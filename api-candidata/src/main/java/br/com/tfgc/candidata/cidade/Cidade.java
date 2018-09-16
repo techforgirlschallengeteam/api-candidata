@@ -16,7 +16,7 @@ public class Cidade {
 	@Column(name = "id")
 	private Long id;
 
-	@Column(name = "nome", unique = true, nullable = true)
+	@Column(name = "nome", nullable = true)
 	private String nome;
 
 	@Column(name = "estado", nullable = true)
