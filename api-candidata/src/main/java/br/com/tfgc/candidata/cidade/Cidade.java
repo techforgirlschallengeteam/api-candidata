@@ -1,9 +1,9 @@
 package br.com.tfgc.candidata.cidade;
 
-import java.util.UUID;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -11,38 +11,38 @@ import javax.persistence.Table;
 @Table(name = "cidade")
 public class Cidade {
 
-    @Id
-    @GeneratedValue(generator = "UUID")
-    @Column(name = "id")
-    private UUID id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id")
+	private Long id;
 
-    @Column(name = "cidade")
-    private String nomeCidade;
+	@Column(name = "nome", unique = true, nullable = true)
+	private String nome;
 
-    @Column(name = "estado")
-    private String nomeEstado;
+	@Column(name = "estado", nullable = true)
+	private String estado;
 
-    public Cidade(String nomeCidade, String nomeEstado) {
-        this.nomeCidade = nomeCidade;
-        this.nomeEstado = nomeEstado;
-    }
+	public Cidade(String nomeCidade, String nomeEstado) {
+		this.nome = nomeCidade;
+		this.estado = nomeEstado;
+	}
 
-    public Cidade() {
-    }
+	public Cidade() {
+	}
 
-    public String getNomeCidade() {
-        return nomeCidade;
-    }
+	public String getNome() {
+		return nome;
+	}
 
-    public void setNomeCidade(String nomeCidade) {
-        this.nomeCidade = nomeCidade;
-    }
+	public void setNome(String nomeCidade) {
+		this.nome = nomeCidade;
+	}
 
-    public String getNomeEstado() {
-        return nomeEstado;
-    }
+	public String getEstado() {
+		return estado;
+	}
 
-    public void setNomeEstado(String nomeEstado) {
-        this.nomeEstado = nomeEstado;
-    }
+	public void setEstado(String nomeEstado) {
+		this.estado = nomeEstado;
+	}
 }
