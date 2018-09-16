@@ -14,4 +14,14 @@ public class CandidataConversor {
 		candidata.setTelefone(jsonCandidata.getTelefone());
 		return candidata;
 	}
+	public static CandidataJson candidataToJson(Candidata candidata) {
+		CandidataJson candidataJson = new CandidataJson();
+		candidataJson.setEmail(candidata.getEmail());
+		candidataJson.setHeadline(candidata.getHeadline());
+		candidataJson.setNome(candidata.getNome());
+		candidataJson.setResumo(candidata.getResumo());
+		candidataJson.setTecnologias(candidata.getTecnologias());
+		candidataJson.setTelefone(candidata.getTelefone());
+		return candidataJson;
+	}
 }
